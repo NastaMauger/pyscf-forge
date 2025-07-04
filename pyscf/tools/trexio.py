@@ -384,8 +384,9 @@ def read_eri(filename):
 #        eri_size = nao_pair * (nao_pair+1) // 2
 #        idx, data, n_read, eof_flag = trexio.read_mo_2e_int_eri(tf, 0, eri_size)
 #    eri = np.zeros(eri_size)
-#    x = idx[:,0]*(idx[:,0]+1)//2 + idx[:,1]
-#    y = idx[:,2]*(idx[:,2]+1)//2 + idx[:,3]
+#    The trexio indices are in physicist's notation 
+#    x = idx[:,0]*(idx[:,0]+1)//2 + idx[:,2]
+#    y = idx[:,1]*(idx[:,1]+1)//2 + idx[:,3]
 #    eri[x*(x+1)//2+y] = data
 #    return eri
 
